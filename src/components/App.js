@@ -1,18 +1,11 @@
 import React from 'react';
-import styled from "styled-components"
-
-const StyledMain = styled.main`
-  background: green;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-`
+import { StyledBody, StyledTable } from "./styled/Lib"
 
 function App() {
   return (
-    <StyledMain>
-      Hello
-    </StyledMain>
+    <StyledBody>
+      <StyledTable />
+    </StyledBody>
   );
 }
 
