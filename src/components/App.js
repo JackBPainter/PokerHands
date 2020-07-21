@@ -4,7 +4,8 @@ import { StyledBody, StyledTable } from "./styled/Lib"
 function App() {
   return (
     <StyledBody>
-      <StyledTable />
+      <StyledTable>
+      </StyledTable>
     </StyledBody>
   );
 }

@@ -15,5 +15,13 @@ export const StyledTable = styled.main`
   height: 480px;
   width: 280px;
   border: solid black 5px;
-  border-radius: 50%
+  border-radius: 50%;
+`
+
+export const StyledCard = styled.div`
+  background: white;
+  border: solid black 3px;
+  border-radius: 10%;
+  height: 100px;
+  width: 70px; 
 `
