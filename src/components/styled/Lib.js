@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 // App.js
 
@@ -36,6 +36,7 @@ export const StyledCard = styled.div`
   border-radius: 10%;
   height: 100px;
   width: 70px; 
+  cursor: pointer;
 `
 
 export const StyledBlankCard = styled.div`
@@ -49,6 +50,7 @@ export const StyledBlankCard = styled.div`
   width: 70px; 
   font-size: 40px;
   font-weight: bold;
+  cursor: pointer;
 `
 
 // CardSelect.js
