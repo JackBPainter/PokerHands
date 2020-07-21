@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyledBody, StyledTable } from "./styled/Lib"
 
-function App() {
+import Cards from './Cards'
+import { StyledBody, StyledTable } from './styled/Lib'
+
+const App = () => {
   return (
     <StyledBody>
       <StyledTable>
+        <Cards/>
       </StyledTable>
     </StyledBody>
   );
