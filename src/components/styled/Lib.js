@@ -50,3 +50,9 @@ export const StyledBlankCard = styled.div`
   font-size: 40px;
   font-weight: bold;
 `
+
+// CardSelect.js
+
+export const CardSelectContainer = styled.main`
+    height: 100vh;
+`
