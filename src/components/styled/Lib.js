@@ -31,12 +31,20 @@ export const StyledCardContainer = styled.main`
 `
 
 export const StyledCard = styled.div`
+  position: relative;
   background: white;
   border: solid black 3px;
   border-radius: 10%;
   height: 100px;
   width: 70px; 
   cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 40%;
+    left: 40%;    
+    margin: 0 auto;
+  }
 `
 
 export const StyledBlankCard = styled.div`
@@ -57,4 +65,9 @@ export const StyledBlankCard = styled.div`
 
 export const CardSelectContainer = styled.main`
     height: 100vh;
+    width: 84vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 `
