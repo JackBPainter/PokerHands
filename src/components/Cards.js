@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { StyledCardContainer, StyledCard, StyledBlankCard } from './styled/Lib';
 
-const Cards = ({ setCardSelect, cardSelect, card }) => {
+const Cards = ({ setCardSelect, cardSelect, card, position, setPosition }) => {
+  const onClickHandler = (pos) => {
+    setPosition(pos) 
+    setCardSelect(!cardSelect)
+  }
 
-  const replaceBlank = () => {
+  const replaceBlank = (props) => {
     if(card && card.suit === "&diams;") {
       return (
         <StyledCard card={card} suit={card.suit} key={card.suit + card.value}>
@@ -33,16 +37,17 @@ const Cards = ({ setCardSelect, cardSelect, card }) => {
         </StyledCard>
       )
     }
-    return <StyledBlankCard onClick={() => setCardSelect(!cardSelect)}>?</StyledBlankCard>
   }
 
   return (
     <StyledCardContainer>
-      {
-        replaceBlank()
+      {card ? 
+        replaceBlank() : 
+        <StyledBlankCard onClick={() => onClickHandler(1)}>?</StyledBlankCard>
       }
-      {
-        replaceBlank()
+      {card ? 
+        replaceBlank() : 
+        <StyledBlankCard onClick={() => onClickHandler(2)}>?</StyledBlankCard>
       }
     </StyledCardContainer>
   );
