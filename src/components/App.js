@@ -6,11 +6,12 @@ import { StyledBody, StyledTable } from "./styled/Lib";
 
 const App = () => {
   const [cardSelect, setCardSelect] = useState(false);
+  const [card, setCard] = useState()
 
   return (
     <StyledBody>
       {cardSelect === true ? (
-        <CardSelect cardSelect={cardSelect} setCardSelect={setCardSelect} />
+        <CardSelect cardSelect={cardSelect} setCardSelect={setCardSelect} card={card} setCard={setCard} />
       ) : (
         <StyledTable>
           <Cards cardSelect={cardSelect} setCardSelect={setCardSelect} />
