@@ -35,15 +35,14 @@ export const StyledCard = styled.div`
   background: white;
   border: solid black 3px;
   border-radius: 10%;
-  height: 100px;
-  width: 70px; 
+  margin: 2px;
   cursor: pointer;
 
   p {
-    position: absolute;
-    top: 40%;
-    left: 40%;    
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
   }
 `
 
@@ -64,10 +63,8 @@ export const StyledBlankCard = styled.div`
 // CardSelect.js
 
 export const CardSelectContainer = styled.main`
-    height: 100vh;
-    width: 84vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(13, 1fr);
+    width: 500px;
+    height: 300px;
 `
