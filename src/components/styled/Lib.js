@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import felt from '../../felt.jpg'
+
 // App.js
 
 export const StyledBody = styled.body`
@@ -65,6 +67,9 @@ export const StyledBlankCard = styled.div`
 export const CardSelectContainer = styled.main`
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(13, 1fr);
+    background-image: url(${felt});
     width: 500px;
     height: 300px;
+    border-radius: 2%;
+    border: 2px solid black
 `
