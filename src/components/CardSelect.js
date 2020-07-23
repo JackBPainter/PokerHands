@@ -8,7 +8,7 @@ const CardSelect = ({ setCardSelect, cardSelect, card, setCard }) => {
 
   const onClickHandler = (curr) => {
     setCardSelect(!cardSelect)
-    setCard([curr.suit, curr.value])
+    setCard({suit: curr.suit, value: curr.value})
   }
 
   return (

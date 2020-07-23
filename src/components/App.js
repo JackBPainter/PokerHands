@@ -14,7 +14,7 @@ const App = () => {
         <CardSelect cardSelect={cardSelect} setCardSelect={setCardSelect} card={card} setCard={setCard} />
       ) : (
         <StyledTable>
-          <Cards cardSelect={cardSelect} setCardSelect={setCardSelect} />
+          <Cards cardSelect={cardSelect} setCardSelect={setCardSelect} card={card} />
         </StyledTable>
       )}
     </StyledBody>

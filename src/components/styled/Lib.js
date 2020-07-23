@@ -38,6 +38,8 @@ export const StyledCard = styled.div`
   border: solid black 3px;
   border-radius: 10%;
   margin: 2px;
+  height: ${({ card }) => card ? "100px" : ""};  
+  width: ${({ card }) => card ? "70px" : ""};
   cursor: pointer;
 
   p {
