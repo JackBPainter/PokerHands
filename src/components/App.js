@@ -10,7 +10,7 @@ const App = () => {
   return (
     <StyledBody>
       {cardSelect === true ? (
-        <CardSelect />
+        <CardSelect cardSelect={cardSelect} setCardSelect={setCardSelect} />
       ) : (
         <StyledTable>
           <Cards cardSelect={cardSelect} setCardSelect={setCardSelect} />
