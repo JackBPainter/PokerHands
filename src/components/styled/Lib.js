@@ -34,20 +34,21 @@ export const StyledCardContainer = styled.main`
 `
 
 export const StyledCard = styled.div`
-  position: relative;
   background: white;
   border: solid black 3px;
   border-radius: 10%;
   margin: 2px;
   height: ${({ selected }) => selected ? "100px" : ""};  
   width: ${({ selected }) => selected ? "70px" : ""};
+  color: ${({ suit }) => suit === "&hearts;" || suit === "&diams;" ? "red" : "black"};
   cursor: pointer;
 
   p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: ${({ selected }) => selected ? "60%" : "50%"};
+    font-size: ${({ selected }) => selected ? "20px" : "16px"};
   }
 `
 
@@ -58,6 +59,7 @@ export const StyledBlankCard = styled.div`
   background: lightblue;
   border: solid black 3px;
   border-radius: 10%;
+  margin: 2px;
   height: 100px;
   width: 70px; 
   font-size: 40px;
@@ -71,8 +73,8 @@ export const CardSelectContainer = styled.main`
     display: grid;
     grid-template: repeat(4, 1fr) / repeat(13, 1fr);
     background-image: url(${felt});
-    width: 500px;
-    height: 300px;
+    width: 700px;
+    height: 325px;
     border-radius: 2%;
     border: 2px solid black
 `

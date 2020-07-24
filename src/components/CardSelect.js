@@ -1,7 +1,7 @@
 import React from "react";
 
 import getCardDeck from "../functions/getCardDeck";
-import { CardSelectContainer, CardSelectTable, StyledCard } from "./styled/Lib";
+import { CardSelectContainer, StyledCard } from "./styled/Lib";
 
 const CardSelect = ({ setCardSelect, cardSelect, cards, setCards, firstPosition, secondPosition }) => {
   const deck = getCardDeck();

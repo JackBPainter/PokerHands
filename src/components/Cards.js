@@ -22,7 +22,7 @@ const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPositi
     if(pos === 2) {
       card = cards.length - 1
     }
-    console.log(cards[card])
+    console.log(cards[card].suit)
 
     if(cards && cards[card].suit === "&diams;") {
       return (
