@@ -29,6 +29,7 @@ export const StyledCardContainer = styled.main`
     display: flex;
     justify-content: space-between;
     width: 160px;
+    height: 100px;
     margin: 0 auto;
 `
 
@@ -38,8 +39,8 @@ export const StyledCard = styled.div`
   border: solid black 3px;
   border-radius: 10%;
   margin: 2px;
-  height: ${({ card }) => card ? "100px" : ""};  
-  width: ${({ card }) => card ? "70px" : ""};
+  height: ${({ selected }) => selected ? "100px" : ""};  
+  width: ${({ selected }) => selected ? "70px" : ""};
   cursor: pointer;
 
   p {

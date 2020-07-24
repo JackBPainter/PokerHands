@@ -2,38 +2,53 @@ import React from 'react';
 
 import { StyledCardContainer, StyledCard, StyledBlankCard } from './styled/Lib';
 
-const Cards = ({ setCardSelect, cardSelect, card, position, setPosition }) => {
+const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {  
+
   const onClickHandler = (pos) => {
-    setPosition(pos) 
+    if(pos === 1) {
+      setFirstPosition(true)
+    } 
+    if(pos === 2) {
+      setSecondPosition(true)
+    }
     setCardSelect(!cardSelect)
   }
 
-  const replaceBlank = (props) => {
-    if(card && card.suit === "&diams;") {
+  const replaceBlank = (pos) => {
+    let card
+    if(pos === 1) {
+      card = 0
+    }
+    if(pos === 2) {
+      card = cards.length - 1
+    }
+    console.log(cards[card])
+
+    if(cards && cards[card].suit === "&diams;") {
       return (
-        <StyledCard card={card} suit={card.suit} key={card.suit + card.value}>
-          &diams; <p>{card.value}</p>
+        <StyledCard selected={true} suit={cards[card].suit} key={cards[card].suit + cards[card].value}>
+          &diams; <p>{cards[card].value}</p>
         </StyledCard>
       )
     }
-    if(card && card.suit === "&hearts;") {
+    if(cards && cards[card].suit === "&hearts;") {
       return (
-        <StyledCard card={card} suit={card.suit} key={card.suit + card.value}>
-          &hearts; <p>{card.value}</p>
+        <StyledCard selected={true} suit={cards[card].suit} key={cards[card].suit + cards[card].value}>
+          &hearts; <p>{cards[card].value}</p>
         </StyledCard>
       )
     }
-    if(card && card.suit === "&spades;") {
+    if(cards && cards[card].suit === "&spades;") {
       return (
-        <StyledCard card={card} suit={card.suit} key={card.suit + card.value}>
-          &spades; <p>{card.value}</p>
+        <StyledCard selected={true} suit={cards[card].suit} key={cards[card].suit + cards[card].value}>
+          &spades; <p>{cards[card].value}</p>
         </StyledCard>
       )
     }
-    if(card && card.suit === "&clubs;") {
+    if(cards && cards[card].suit === "&clubs;") {
       return (
-        <StyledCard card={card} suit={card.suit} key={card.suit + card.value}>
-          &clubs; <p>{card.value}</p>
+        <StyledCard selected={true} suit={cards[card].suit} key={cards[card].suit + cards[card].value}>
+          &clubs; <p>{cards[card].value}</p>
         </StyledCard>
       )
     }
@@ -41,12 +56,12 @@ const Cards = ({ setCardSelect, cardSelect, card, position, setPosition }) => {
 
   return (
     <StyledCardContainer>
-      {card ? 
-        replaceBlank() : 
+      {cards && firstPosition === true ? 
+        replaceBlank(1) : 
         <StyledBlankCard onClick={() => onClickHandler(1)}>?</StyledBlankCard>
       }
-      {card ? 
-        replaceBlank() : 
+      {cards && secondPosition === true ? 
+        replaceBlank(2) : 
         <StyledBlankCard onClick={() => onClickHandler(2)}>?</StyledBlankCard>
       }
     </StyledCardContainer>

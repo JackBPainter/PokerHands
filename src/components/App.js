@@ -6,16 +6,32 @@ import { StyledBody, StyledTable } from "./styled/Lib";
 
 const App = () => {
   const [cardSelect, setCardSelect] = useState(false)
-  const [card, setCard] = useState()
-  const [position, setPosition] = useState()
-  
+  const [cards, setCards] = useState([0])
+  const [firstPosition, setFirstPosition] = useState(false)
+  const [secondPosition, setSecondPosition] = useState(false)
+
   return (
     <StyledBody>
       {cardSelect === true ? (
-        <CardSelect cardSelect={cardSelect} setCardSelect={setCardSelect} card={card} setCard={setCard} />
+        <CardSelect 
+          cardSelect={cardSelect} 
+          setCardSelect={setCardSelect} 
+          cards={cards} 
+          setCards={setCards} 
+          firstPosition={firstPosition}
+          secondPosition={secondPosition}
+        />
       ) : (
         <StyledTable>
-          <Cards cardSelect={cardSelect} setCardSelect={setCardSelect} card={card} position={position} setPosition={setPosition} />
+          <Cards 
+            cardSelect={cardSelect} 
+            setCardSelect={setCardSelect} 
+            cards={cards} 
+            firstPosition={firstPosition} 
+            setFirstPosition={setFirstPosition} 
+            secondPosition={secondPosition}
+            setSecondPosition={setSecondPosition} 
+          />
         </StyledTable>
       )}
     </StyledBody>
