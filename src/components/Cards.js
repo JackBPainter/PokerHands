@@ -3,6 +3,9 @@ import React from 'react';
 import { StyledCardContainer, StyledCard, StyledBlankCard } from './styled/Lib';
 
 const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {  
+  let firstPos = 1
+  let secondPos = 2
+  let card 
 
   const onClickHandler = (pos) => {
     if(pos === 1) {
@@ -15,14 +18,20 @@ const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPositi
   }
 
   const replaceBlank = (pos) => {
-    let card
-    if(pos === 1) {
+    if(firstPosition === true && secondPosition === false) {
       card = 0
     }
-    if(pos === 2) {
-      card = cards.length - 1
+    if(firstPosition === false && secondPosition === true) {
+      card = 0
+    } 
+    if(firstPosition === true && secondPosition === true && pos === 1) {
+      card = 0
     }
-    console.log(cards[card].suit)
+    if(firstPosition === true && secondPosition === true && pos === 2) {
+      card = 1
+    }
+
+    console.log(cards)
 
     if(cards && cards[card].suit === "&diams;") {
       return (
@@ -56,13 +65,13 @@ const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPositi
 
   return (
     <StyledCardContainer>
-      {cards && firstPosition === true ? 
-        replaceBlank(1) : 
-        <StyledBlankCard onClick={() => onClickHandler(1)}>?</StyledBlankCard>
+      { cards && firstPosition === true ? 
+        replaceBlank(firstPos) : 
+        <StyledBlankCard onClick={() => onClickHandler(firstPos)}>?</StyledBlankCard>
       }
       {cards && secondPosition === true ? 
-        replaceBlank(2) : 
-        <StyledBlankCard onClick={() => onClickHandler(2)}>?</StyledBlankCard>
+        replaceBlank(secondPos) : 
+        <StyledBlankCard onClick={() => onClickHandler(secondPos)}>?</StyledBlankCard>
       }
     </StyledCardContainer>
   );
