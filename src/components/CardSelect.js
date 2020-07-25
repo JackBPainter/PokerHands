@@ -2,7 +2,6 @@ import React from "react"
 
 import getCardDeck from "../functions/getCardDeck"
 import { CardSelectContainer, StyledCard } from "./styled/Lib"
-import { findAllByDisplayValue } from "@testing-library/react";
 
 const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {
   const deck = getCardDeck();
