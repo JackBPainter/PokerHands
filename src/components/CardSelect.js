@@ -3,15 +3,17 @@ import React from "react";
 import getCardDeck from "../functions/getCardDeck";
 import { CardSelectContainer, StyledCard } from "./styled/Lib";
 
-const CardSelect = ({ setCardSelect, cardSelect, cards, setCards, firstPosition, secondPosition }) => {
+const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, secondPosition }) => {
   const deck = getCardDeck();
 
   const onClickHandler = (curr) => {
     if(firstPosition) {
-      setCards([{suit: curr.suit, value: curr.value}, ...cards])
+      setFirstCard()
+      setFirstCard({suit: curr.suit, value: curr.value})
     }
     if(secondPosition) {
-      setCards([...cards, {suit: curr.suit, value: curr.value}])
+      setSecondCard()
+      setSecondCard({suit: curr.suit, value: curr.value})
     }
     setCardSelect(!cardSelect)
   }

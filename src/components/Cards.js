@@ -18,18 +18,7 @@ const Cards = ({ setCardSelect, cardSelect, cards, firstPosition, setFirstPositi
   }
 
   const replaceBlank = (pos) => {
-    if(firstPosition === true && secondPosition === false && cards.length <= 2) {
-      card = 0
-    }
-    if(firstPosition === false && secondPosition === true && cards.length <= 2) {
-      card = 0
-    } 
-    if(firstPosition === true && secondPosition === true && pos === firstPos) {
-      card = 0
-    }
-    if(firstPosition === true && secondPosition === true && pos === secondPos) {
-      card = 1
-    }
+
 
     if(cards && cards[card].suit === "&diams;") {
       return (

@@ -6,7 +6,6 @@ import { StyledBody, StyledTable } from "./styled/Lib";
 
 const App = () => {
   const [cardSelect, setCardSelect] = useState(false)
-  const [cards, setCards] = useState([])
   const [firstCard, setFirstCard] = useState()
   const [secondCard, setSecondCard] = useState()
   const [firstPosition, setFirstPosition] = useState(false)
@@ -18,8 +17,8 @@ const App = () => {
         <CardSelect 
           cardSelect={cardSelect} 
           setCardSelect={setCardSelect} 
-          cards={cards} 
-          setCards={setCards} 
+          setFirstCard={setFirstCard} 
+          setSecondCard={setSecondCard} 
           firstPosition={firstPosition}
           secondPosition={secondPosition}
         />
