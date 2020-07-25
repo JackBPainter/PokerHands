@@ -7,13 +7,13 @@ const CardSelect = ({ setCardSelect, cardSelect, cards, setCards, firstPosition,
   const deck = getCardDeck();
 
   const onClickHandler = (curr) => {
-    setCardSelect(!cardSelect)
     if(firstPosition) {
       setCards([{suit: curr.suit, value: curr.value}, ...cards])
     }
     if(secondPosition) {
       setCards([...cards, {suit: curr.suit, value: curr.value}])
     }
+    setCardSelect(!cardSelect)
   }
 
   return (
