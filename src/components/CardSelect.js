@@ -1,11 +1,9 @@
 import React from "react"
 
-import getCardDeck from "../functions/getCardDeck"
+import renderCardDeck from "../functions/renderCardDeck"
 import { CardSelectContainer, StyledCard } from "./styled/Lib"
 
 const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {
-  const deck = getCardDeck();
-
   const onClickHandler = (curr) => {
     if(firstPosition) {
       setFirstCard({suit: curr.suit, value: curr.value})
@@ -20,36 +18,7 @@ const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, fi
 
   return (
     <CardSelectContainer>
-      {deck.map((curr) => {
-        if (curr.suit === "&diams;") {
-          return (
-            <StyledCard suit={curr.suit} key={curr.value + curr.suit} onClick={() => onClickHandler(curr)}>
-              &diams; <p>{curr.value}</p>
-            </StyledCard>
-          )
-        }
-        if (curr.suit === "&hearts;") {
-          return (
-            <StyledCard suit={curr.suit} key={curr.value + curr.suit} onClick={() => onClickHandler(curr)}>
-              &hearts; <p>{curr.value}</p>
-            </StyledCard>
-          )
-        }
-        if (curr.suit === "&spades;") {
-          return (
-            <StyledCard suit={curr.suit} key={curr.value + curr.suit} onClick={() => onClickHandler(curr)}>
-                &spades; <p>{curr.value}</p>
-            </StyledCard>
-          )
-        }
-        if (curr.suit === "&clubs;") {
-          return (
-            <StyledCard suit={curr.suit} key={curr.value + curr.suit} onClick={() => onClickHandler(curr)}>
-              &clubs; <p>{curr.value}</p>
-            </StyledCard>
-          );
-        }
-      })}
+      {renderCardDeck(onClickHandler)}
     </CardSelectContainer>
   )
 }

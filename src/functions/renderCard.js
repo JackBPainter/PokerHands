@@ -1,4 +1,5 @@
 import React from "react"
+
 import { StyledCard } from "../components/styled/Lib"
 
 export default function renderCard(card, onClickHandler, pos) {
