@@ -1,7 +1,7 @@
 import React from "react"
 import { StyledCard } from "../components/styled/Lib"
 
-export default function renderCardDeck(card, onClickHandler, pos) {
+export default function renderCard(card, onClickHandler, pos) {
     if(card && card.suit === "&diams;") {
         return (
           <StyledCard selected={true} suit={card.suit} key={card.suit + card.value} onClick={() => onClickHandler(pos)}>

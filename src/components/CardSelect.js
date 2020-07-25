@@ -20,7 +20,7 @@ const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, fi
 
   return (
     <CardSelectContainer>
-      {deck.map((curr, index) => {
+      {deck.map((curr) => {
         if (curr.suit === "&diams;") {
           return (
             <StyledCard suit={curr.suit} key={curr.value + curr.suit} onClick={() => onClickHandler(curr)}>

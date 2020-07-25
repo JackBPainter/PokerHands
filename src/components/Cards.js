@@ -1,5 +1,5 @@
 import React from 'react';
-import renderCardDeck from "../functions/renderCardDeck"
+import renderCard from "../functions/renderCard"
 
 import { StyledCardContainer, StyledBlankCard } from './styled/Lib';
 
@@ -20,11 +20,11 @@ const Cards = ({ setCardSelect, cardSelect, firstCard, secondCard, firstPosition
   return (
     <StyledCardContainer>
       {firstPosition === true || firstCard ? 
-        renderCardDeck(firstCard, onClickHandler, firstPos) : 
+        renderCard(firstCard, onClickHandler, firstPos) : 
         <StyledBlankCard onClick={() => onClickHandler(firstPos)}>?</StyledBlankCard>
       }
       {secondPosition === true || secondCard ? 
-        renderCardDeck(secondCard, onClickHandler, secondPos) : 
+        renderCard(secondCard, onClickHandler, secondPos) : 
         <StyledBlankCard onClick={() => onClickHandler(secondPos)}>?</StyledBlankCard>
       }
     </StyledCardContainer>
