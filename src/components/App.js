@@ -11,6 +11,9 @@ const App = () => {
   const [firstPosition, setFirstPosition] = useState(false)
   const [secondPosition, setSecondPosition] = useState(false)
 
+  console.log(firstCard)
+  console.log(secondCard)
+
   return (
     <StyledBody>
       {cardSelect === true ? (
@@ -20,14 +23,17 @@ const App = () => {
           setFirstCard={setFirstCard} 
           setSecondCard={setSecondCard} 
           firstPosition={firstPosition}
+          setFirstPosition={setFirstPosition}
           secondPosition={secondPosition}
+          setSecondPosition={setSecondPosition}
         />
       ) : (
         <StyledTable>
           <Cards 
             cardSelect={cardSelect} 
             setCardSelect={setCardSelect} 
-            cards={cards} 
+            firstCard={firstCard} 
+            secondCard={secondCard} 
             firstPosition={firstPosition} 
             setFirstPosition={setFirstPosition} 
             secondPosition={secondPosition}

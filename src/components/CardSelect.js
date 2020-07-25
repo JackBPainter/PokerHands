@@ -1,19 +1,20 @@
-import React from "react";
+import React from "react"
 
-import getCardDeck from "../functions/getCardDeck";
-import { CardSelectContainer, StyledCard } from "./styled/Lib";
+import getCardDeck from "../functions/getCardDeck"
+import { CardSelectContainer, StyledCard } from "./styled/Lib"
+import { findAllByDisplayValue } from "@testing-library/react";
 
-const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, secondPosition }) => {
+const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {
   const deck = getCardDeck();
 
   const onClickHandler = (curr) => {
     if(firstPosition) {
-      setFirstCard()
       setFirstCard({suit: curr.suit, value: curr.value})
+      setFirstPosition(false)
     }
     if(secondPosition) {
-      setSecondCard()
       setSecondCard({suit: curr.suit, value: curr.value})
+      setSecondPosition(false)
     }
     setCardSelect(!cardSelect)
   }
