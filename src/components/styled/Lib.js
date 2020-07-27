@@ -13,9 +13,9 @@ export const StyledBody = styled.body`
 `
 
 export const StyledTable = styled.main`
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
   background: darkgreen;
   height: 480px;
   width: 280px;
@@ -26,11 +26,13 @@ export const StyledTable = styled.main`
 // Cards.js
 
 export const StyledCardContainer = styled.main`
-    display: flex;
-    justify-content: space-between;
-    width: 160px;
-    height: 100px;
-    margin: 0 auto;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+  height: 100px;
+  margin: 0 auto;
+  bottom: 50px;
 `
 
 export const StyledCard = styled.div`

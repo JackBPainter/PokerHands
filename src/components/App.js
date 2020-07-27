@@ -10,6 +10,11 @@ const App = () => {
   const [secondCard, setSecondCard] = useState()
   const [firstPosition, setFirstPosition] = useState(false)
   const [secondPosition, setSecondPosition] = useState(false)
+  const [bothSelected, setBothSelected] = useState(false)
+
+  if(firstCard && secondCard) {
+    setBothSelected(true)
+  }
 
   return (
     <StyledBody>
@@ -35,6 +40,7 @@ const App = () => {
             setFirstPosition={setFirstPosition} 
             secondPosition={secondPosition}
             setSecondPosition={setSecondPosition} 
+            bothSelected={bothSelected}
           />
         </StyledTable>
       )}

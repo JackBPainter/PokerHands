@@ -3,7 +3,7 @@ import renderCard from "../functions/renderCard"
 
 import { StyledCardContainer, StyledBlankCard } from './styled/Lib';
 
-const Cards = ({ setCardSelect, cardSelect, firstCard, secondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {  
+const Cards = ({ setCardSelect, cardSelect, firstCard, secondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition, bothSelected }) => {  
   let firstPos = 1
   let secondPos = 2
 
@@ -18,7 +18,7 @@ const Cards = ({ setCardSelect, cardSelect, firstCard, secondCard, firstPosition
   }
 
   return (
-    <StyledCardContainer>
+    <StyledCardContainer bothSelected={bothSelected}>
       {firstPosition === true || firstCard ? 
         renderCard(firstCard, onClickHandler, firstPos) : 
         <StyledBlankCard onClick={() => onClickHandler(firstPos)}>?</StyledBlankCard>
