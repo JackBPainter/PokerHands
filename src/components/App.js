@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Cards from "./Cards";
 import CardSelect from "./CardSelect";
@@ -12,9 +12,13 @@ const App = () => {
   const [secondPosition, setSecondPosition] = useState(false)
   const [bothSelected, setBothSelected] = useState(false)
 
-  if(firstCard && secondCard) {
-    setBothSelected(true)
-  }
+  useEffect(() => {
+    if(firstCard !== undefined && secondCard !== undefined) {
+      setBothSelected(true)
+    }
+  })
+  
+  console.log(bothSelected)
 
   return (
     <StyledBody>
@@ -30,7 +34,7 @@ const App = () => {
           setSecondPosition={setSecondPosition}
         />
       ) : (
-        <StyledTable>
+        <StyledTable bothSelected={bothSelected}>
           <Cards 
             cardSelect={cardSelect} 
             setCardSelect={setCardSelect} 

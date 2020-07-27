@@ -16,6 +16,7 @@ export const StyledTable = styled.main`
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: ${({ bothSelected }) => bothSelected ? "" : "center"};
   background: darkgreen;
   height: 480px;
   width: 280px;
@@ -26,13 +27,13 @@ export const StyledTable = styled.main`
 // Cards.js
 
 export const StyledCardContainer = styled.main`
-  position: absolute;
+  position: ${({ bothSelected }) => bothSelected ? "absolute" : ""};
   display: flex;
   justify-content: space-between;
   width: 160px;
   height: 100px;
   margin: 0 auto;
-  bottom: 50px;
+  bottom: ${({ bothSelected }) => bothSelected ? "50px" : ""};
 `
 
 export const StyledCard = styled.div`
