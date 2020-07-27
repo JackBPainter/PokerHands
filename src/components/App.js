@@ -11,9 +11,6 @@ const App = () => {
   const [firstPosition, setFirstPosition] = useState(false)
   const [secondPosition, setSecondPosition] = useState(false)
 
-  console.log(firstCard)
-  console.log(secondCard)
-
   return (
     <StyledBody>
       {cardSelect === true ? (
