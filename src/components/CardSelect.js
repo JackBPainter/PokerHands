@@ -1,7 +1,7 @@
 import React from "react"
 
 import renderCardDeck from "../functions/renderCardDeck"
-import { StyledCardSelectContainer, StyledCard } from "./styled/Lib"
+import { StyledCardSelectContainer } from "./styled/Lib"
 
 const CardSelect = ({ setCardSelect, cardSelect, setFirstCard, setSecondCard, firstPosition, setFirstPosition, secondPosition, setSecondPosition }) => {
   const onClickHandler = (curr) => {

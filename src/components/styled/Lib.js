@@ -91,4 +91,12 @@ export const StyledCardEvalContainer = styled.main`
   margin-bottom: 10px;
 `
 
+export const StyledCardEvalText = styled.div`
+  height: 50%;
+
+  :first-child {
+    border-bottom: solid black 2px;
+  }
+`
+
 
