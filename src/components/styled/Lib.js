@@ -13,10 +13,10 @@ export const StyledBody = styled.body`
 `
 
 export const StyledTable = styled.main`
-  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: ${({ bothSelected }) => bothSelected ? "" : "center"};
+  align-items: center;
   background: darkgreen;
   height: 480px;
   width: 280px;
@@ -27,13 +27,11 @@ export const StyledTable = styled.main`
 // Cards.js
 
 export const StyledCardContainer = styled.main`
-  position: ${({ bothSelected }) => bothSelected ? "absolute" : ""};
   display: flex;
   justify-content: space-between;
   width: 160px;
   height: 100px;
   margin: 0 auto;
-  bottom: ${({ bothSelected }) => bothSelected ? "50px" : ""};
 `
 
 export const StyledCard = styled.div`
@@ -72,12 +70,25 @@ export const StyledBlankCard = styled.div`
 
 // CardSelect.js
 
-export const CardSelectContainer = styled.main`
-    display: grid;
-    grid-template: repeat(4, 1fr) / repeat(13, 1fr);
-    background-image: url(${felt});
-    width: 700px;
-    height: 325px;
-    border-radius: 2%;
-    border: 2px solid black
+export const StyledCardSelectContainer = styled.main`
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(13, 1fr);
+  background-image: url(${felt});
+  width: 700px;
+  height: 325px;
+  border-radius: 2%;
+  border: 2px solid black;
 `
+
+// CardsEval.js
+
+export const StyledCardEvalContainer = styled.main`
+  height: 250px;
+  width: 180px;
+  background: white;
+  border-radius: 10%;
+  border: solid black 3px;
+  margin-bottom: 10px;
+`
+
+
