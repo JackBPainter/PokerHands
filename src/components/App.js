@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Cards from "./Cards";
 import CardSelect from "./CardSelect";
+import CardsEval from "./CardsEval"
 import { StyledBody, StyledTable } from "./styled/Lib";
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <StyledBody>
-      {cardSelect === true ? (
+      {cardSelect === true && bothSelected === false ? (
         <CardSelect 
           cardSelect={cardSelect} 
           setCardSelect={setCardSelect} 
@@ -33,8 +34,8 @@ const App = () => {
           secondPosition={secondPosition}
           setSecondPosition={setSecondPosition}
         />
-      ) : (
-        <StyledTable bothSelected={bothSelected}>
+      ) : cardSelect === false && bothSelected === false ? (
+        <StyledTable>
           <Cards 
             cardSelect={cardSelect} 
             setCardSelect={setCardSelect} 
@@ -47,7 +48,22 @@ const App = () => {
             bothSelected={bothSelected}
           />
         </StyledTable>
-      )}
+      ) : cardSelect === false && bothSelected === true ? (
+        <StyledTable>
+        <CardsEval />
+          <Cards 
+            cardSelect={cardSelect} 
+            setCardSelect={setCardSelect} 
+            firstCard={firstCard} 
+            secondCard={secondCard} 
+            firstPosition={firstPosition} 
+            setFirstPosition={setFirstPosition} 
+            secondPosition={secondPosition}
+            setSecondPosition={setSecondPosition} 
+            bothSelected={bothSelected}
+          />
+        </StyledTable>
+      ) : ""}
     </StyledBody>
   );
 };

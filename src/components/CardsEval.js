@@ -1,9 +1,8 @@
 import React from "react"
-
+import { StyledCardEvalContainer } from "./styled/Lib"
+ 
 const CardEval = () => {
-    return (
-        
-    )
+    return <StyledCardEvalContainer />
 }
 
 export default CardEval
