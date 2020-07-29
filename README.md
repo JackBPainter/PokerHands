@@ -1,4 +1,4 @@
-This application lets you find prbability of held cards pre-flop in texas-hold-em-up Poker. 
+This application will evaluate and rank cards held pre-flop in texas-hold-em-up Poker. 
 
 ## Future Additions 
 - Post flop probability 
