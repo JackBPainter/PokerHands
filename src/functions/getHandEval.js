@@ -1,6 +1,13 @@
 import { STRAIGHTS } from "../utils"
 
-const getStraightRank = (firstVal, secondVal) => {
+const getPair = (firstVal, secondVal) => {
+    if(firstVal === secondVal) {
+        let rank = STRAIGHTS.indexOf(firstVal) + 1
+        return {rank, title: "Pair"}
+    }
+}
+
+const getStraightRank = (firstCardVal, secondCardVal) => {
     const newArr = STRAIGHTS.map(str => str.split(""))
     let result = []
     for(let i = 0; i < newArr.length - 1; i++) {
@@ -11,13 +18,13 @@ const getStraightRank = (firstVal, secondVal) => {
     return arr.indexOf(result[0]) + 1
 }
 
-getStraight("T", "9",["AKQJT", "KQJT9", "QJT98", "JT987", "T9876", "98765", "87654", "76543", "65432", "5432A"])
-const flushMatch = (firstCard, secondCard, handEval) => {
-    if(firstCard.suit === secondCard.suit) {
-        handEval.rank = "Flush Draw"
+const getFlush = (firstCardSuit, secondCardSuit, handEval) => {
+    if(firstCardSuit === secondCardSuit) {
+        return "Flush Draw"
     }
 }
 
 export default function getHandEval(firstCard, secondCard) {
     let handEval = {}
+
 }
