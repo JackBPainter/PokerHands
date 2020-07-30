@@ -1,9 +1,9 @@
-import { STRAIGHTS } from "../utils"
+import { STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
 
 const getPair = (firstVal, secondVal) => {
     if(firstVal === secondVal) {
         let rank = STRAIGHTS.indexOf(firstVal) + 1
-        return {rank, title: "Pair"}
+        return {rank, title: PAIR}
     }
 }
 
@@ -17,13 +17,13 @@ const getStraight = (firstCardVal, secondCardVal) => {
     }
     let rank = arr.indexOf(result[0]) + 1
     if(result) {
-        return {rank, title: "Straight Draw"}
+        return {rank, title: STRAIGHT}
     }
 }
 
 const getFlush = (firstCardSuit, secondCardSuit, handEval) => {
     if(firstCardSuit === secondCardSuit) {
-        return "Flush Draw"
+        return FLUSH
     }
 }
 
