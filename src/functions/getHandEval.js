@@ -1,4 +1,4 @@
-import { STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
+import { VALUES, STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
 
 const getPair = (firstVal, secondVal) => {
     if(firstVal === secondVal) {
@@ -21,9 +21,10 @@ const getStraight = (firstCardVal, secondCardVal) => {
     }
 }
 
-const getFlush = (firstCardSuit, secondCardSuit, handEval) => {
-    if(firstCardSuit === secondCardSuit) {
-        return FLUSH
+const getFlush = (firstCard, secondCard) => {
+    if(firstCard.suit === secondCard.suit) {
+        let rank = firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+        return {rank, title: FLUSH}
     }
 }
 
