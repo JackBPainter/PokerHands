@@ -1,8 +1,13 @@
 import React from "react"
-import { StyledCardEvalContainer } from "./styled/Lib"
+import { StyledCardEvalContainer, StyledCardEvalText } from "./styled/Lib"
  
 const CardEval = () => {
-    return <StyledCardEvalContainer />
+    return (
+        <StyledCardEvalContainer>
+            <StyledCardEvalText />
+            <StyledCardEvalText />
+        </StyledCardEvalContainer>
+    )
 }
 
 export default CardEval

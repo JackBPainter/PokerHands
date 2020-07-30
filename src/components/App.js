@@ -17,7 +17,7 @@ const App = () => {
     if(firstCard !== undefined && secondCard !== undefined) {
       setBothSelected(true)
     }
-  })
+  }, [firstCard, secondCard])
   
   console.log(bothSelected)
 
