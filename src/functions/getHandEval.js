@@ -7,7 +7,7 @@ const getPair = (firstVal, secondVal) => {
     }
 }
 
-const getStraightRank = (firstCardVal, secondCardVal) => {
+const getStraight = (firstCardVal, secondCardVal) => {
     const newArr = STRAIGHTS.map(str => str.split(""))
     let result = []
     for(let i = 0; i < newArr.length - 1; i++) {
@@ -15,7 +15,8 @@ const getStraightRank = (firstCardVal, secondCardVal) => {
             result.push(newArr[i].join(""))
         }
     }
-    return arr.indexOf(result[0]) + 1
+    let rank = arr.indexOf(result[0]) + 1
+    return result ? {rank, title: "Straight Draw"} : ""
 }
 
 const getFlush = (firstCardSuit, secondCardSuit, handEval) => {
