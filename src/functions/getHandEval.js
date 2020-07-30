@@ -16,7 +16,9 @@ const getStraight = (firstCardVal, secondCardVal) => {
         }
     }
     let rank = arr.indexOf(result[0]) + 1
-    return result ? {rank, title: "Straight Draw"} : ""
+    if(result) {
+        return {rank, title: "Straight Draw"}
+    }
 }
 
 const getFlush = (firstCardSuit, secondCardSuit, handEval) => {
