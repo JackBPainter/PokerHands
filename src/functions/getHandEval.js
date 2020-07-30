@@ -7,10 +7,10 @@ const getPair = (firstVal, secondVal) => {
     }
 }
 
-const getStraight = (firstCardVal, secondCardVal) => {
+const getStraight = (firstVal, secondVal) => {
     const newArr = STRAIGHTS.map(str => str.split(""))
     let result = []
-    for(let i = 0; i < newArr.length - 1; i++) {
+    for(let i = 0; i < newArr.length; i++) {
         if(newArr[i].includes(firstVal) && newArr[i].includes(secondVal)) {
             result.push(newArr[i].join(""))
         }
