@@ -123,7 +123,7 @@ export const StyledCardEvalTextContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  height: 53.25px; /* StyledCardEvalText height / 2 */
   font-size: 18px;
 `
 
