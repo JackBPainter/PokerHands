@@ -22,24 +22,24 @@ const getStraight = (firstCard, secondCard) => {
 }
 
 const getFlush = (firstCard, secondCard) => {
-    if(firstCard.suit === secondCard.suit) {
-        let rank = firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
-        return {rank, title: FLUSH}
-    } else {
-        return false
-    }
+    let rank = firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+    return {rank, title: FLUSH}
 }
 
 const getStraightFlushDraw = (firstCard, secondCard) => {
-    if(getFlush(firstCard, secondCard) !== false && getStraight(firstCard, secondCard) !== false) {
-        let straightRank = getStraight(firstCard, secondCard)
-        straightRank.rank === 1 ? straightRank.title = ROYALFLUSH : straightRank.title = STRAIGHTFLUSH
-        return straightRank
-    }
+    let straightRank = getStraight(firstCard, secondCard)
+    straightRank.rank === 1 ? straightRank.title = ROYALFLUSH : straightRank.title = STRAIGHTFLUSH
+    return straightRank
 }
 
 export default function getHandEval(firstCard, secondCard) {
-    if(firstCard.value === secondCard.value) {
+    if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) !== false) {
+        return getStraightFlushDraw(firstCard, secondCard)
+    } else if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) === false) {
+        return getFlush(firstCard, secondCard)
+    } else if(firstCard.suit === secondCard.suit === false && getStraight(firstCard, secondCard) !== false) {
+        return getStraight(firstCard, secondCard)
+    } else if(firstCard.value === secondCard.value) {
         return getPair(firstCard)
-    }
+    } 
 }
