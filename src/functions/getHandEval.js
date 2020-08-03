@@ -22,11 +22,11 @@ const getStraight = (firstCard, secondCard) => {
             result.push(newArr[i].join(""))
         }
     }
-    let rank = arr.indexOf(result[0]) + 1
-    if(result) {
-        return {rank, title: STRAIGHT}
-    } else {
+    let rank = newArr.indexOf(result[0]) + 1
+    if(rank <= 0) {
         return false
+    } else {
+        return {rank, title: STRAIGHT}
     }
 }
 
@@ -42,11 +42,11 @@ const getStraightFlushDraw = (firstCard, secondCard) => {
 }
 
 export default function getHandEval(firstCard, secondCard) {
-    if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) !== false) {
+    if(firstCard.suit === secondCard.suit && getStraight(firstCard, secondCard) !== false) {
         return getStraightFlushDraw(firstCard, secondCard)
     } else if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) === false) {
         return getFlush(firstCard, secondCard)
-    } else if(firstCard.suit === secondCard.suit === false && getStraight(firstCard, secondCard) !== false) {
+    } else if(firstCard.suit !== secondCard.suit && getStraight(firstCard, secondCard) !== false) {
         return getStraight(firstCard, secondCard)
     } else if(firstCard.value === secondCard.value) {
         return getPair(firstCard)
