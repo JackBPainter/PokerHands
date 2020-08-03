@@ -1,11 +1,12 @@
 import { VALUES, STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
 
 const checkValueRank = (firstCard, secondCard) => {
-    return firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+    return firstCard.value > secondCard.value ? VALUES.indexOf(firstCard.value) + 1 : VALUES.indexOf(secondCard.value) + 1
 }
 
 const getHigh = (firstCard, secondCard) => {
     let rank = checkValueRank(firstCard, secondCard)
+    console.log(rank)
     return {rank, title: HIGH}
 }
 
