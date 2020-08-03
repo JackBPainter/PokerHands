@@ -19,8 +19,10 @@ const App = () => {
     if(firstCard !== undefined && secondCard !== undefined) {
       setBothSelected(true)
       setHandEval(getHandEval(firstCard, secondCard))
+      console.log(getHandEval(firstCard, secondCard))
     }
   }, [firstCard, secondCard])
+
   
   return (
     <StyledBody>
