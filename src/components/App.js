@@ -24,7 +24,7 @@ const App = () => {
   
   return (
     <StyledBody>
-      {cardSelect === true && bothSelected === false ? (
+      {cardSelect === true ? (
         <CardSelect 
           cardSelect={cardSelect} 
           setCardSelect={setCardSelect} 
