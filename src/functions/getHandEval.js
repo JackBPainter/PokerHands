@@ -10,7 +10,7 @@ const getHigh = (firstCard, secondCard) => {
 }
 
 const getPair = (firstCard) => {
-    let rank = STRAIGHTS.indexOf(firstCard.value) + 1
+    let rank = VALUES.indexOf(firstCard.value) + 1
     return {rank, title: PAIR}
 }
 
@@ -24,7 +24,7 @@ const getStraight = (firstCard, secondCard) => {
     }
     let rank = STRAIGHTS.indexOf(result[0]) + 1
     if(rank > 0) {
-        return {rank, title: "Straight Draw"}
+        return {rank, title: STRAIGHT}
     } else {
         return false
     }
@@ -46,7 +46,7 @@ export default function getHandEval(firstCard, secondCard) {
         return getStraightFlushDraw(firstCard, secondCard)
     } else if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) === false) {
         return getFlush(firstCard, secondCard)
-    } else if(firstCard.suit !== secondCard.suit && getStraight(firstCard, secondCard) !== false) {
+    } else if(firstCard.value !== secondCard.value && firstCard.suit !== secondCard.suit && getStraight(firstCard, secondCard) !== false) {
         return getStraight(firstCard, secondCard)
     } else if(firstCard.value === secondCard.value) {
         return getPair(firstCard)

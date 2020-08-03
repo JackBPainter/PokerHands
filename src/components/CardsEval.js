@@ -1,11 +1,11 @@
 import React from "react"
 import { StyledCardEvalContainer, StyledCardEvalText } from "./styled/Lib"
  
-const CardEval = () => {
+const CardEval = ({ handEval }) => {
     return (
         <StyledCardEvalContainer>
-            <StyledCardEvalText />
-            <StyledCardEvalText />
+            <StyledCardEvalText>{handEval.title}</StyledCardEvalText>
+            <StyledCardEvalText>{handEval.rank}</StyledCardEvalText>
         </StyledCardEvalContainer>
     )
 }

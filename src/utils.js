@@ -1,4 +1,4 @@
-export const VALUES = ['A', "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"]
+export const VALUES = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", 'A']
 export const SUITS = ["&diams;", "&hearts;", "&spades;", "&clubs;"]
 export const STRAIGHTS = ["AKQJT", "KQJT9", "QJT98", "JT987", "T9876", "98765", "87654", "76543", "65432", "5432A"]
 

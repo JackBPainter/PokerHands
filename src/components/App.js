@@ -13,16 +13,15 @@ const App = () => {
   const [firstPosition, setFirstPosition] = useState(false)
   const [secondPosition, setSecondPosition] = useState(false)
   const [bothSelected, setBothSelected] = useState(false)
+  const [handEval, setHandEval] = useState()
 
   useEffect(() => {
     if(firstCard !== undefined && secondCard !== undefined) {
       setBothSelected(true)
-      const handEval = getHandEval(firstCard, secondCard)
-      console.log(handEval)
+      setHandEval(getHandEval(firstCard, secondCard))
     }
   }, [firstCard, secondCard])
   
-
   return (
     <StyledBody>
       {cardSelect === true && bothSelected === false ? (
@@ -52,7 +51,7 @@ const App = () => {
         </StyledTable>
       ) : cardSelect === false && bothSelected === true ? (
         <StyledTable>
-        <CardsEval />
+        <CardsEval handEval={handEval} />
           <Cards 
             cardSelect={cardSelect} 
             setCardSelect={setCardSelect} 
