@@ -1,12 +1,17 @@
 import { VALUES, STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
 
-const getPair = (firstCard, secondCard) => {
-    if(firstCard.value === secondCard.value) {
-        let rank = STRAIGHTS.indexOf(firstCard.value) + 1
-        return {rank, title: PAIR}
-    } else {
-        return false
-    }
+const checkValueRank = (firstCard, secondCard) => {
+    return firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+}
+
+const getHigh = (firstCard, secondCard) => {
+    let rank = checkValueRank(firstCard, secondCard)
+    return {rank, title: HIGH}
+}
+
+const getPair = (firstCard) => {
+    let rank = VALUES.indexOf(firstCard.value) + 1
+    return {rank, title: PAIR}
 }
 
 const getStraight = (firstCard, secondCard) => {
@@ -17,8 +22,8 @@ const getStraight = (firstCard, secondCard) => {
             result.push(newArr[i].join(""))
         }
     }
-    let rank = arr.indexOf(result[0]) + 1
-    if(result) {
+    let rank = STRAIGHTS.indexOf(result[0]) + 1
+    if(rank > 0) {
         return {rank, title: STRAIGHT}
     } else {
         return false
@@ -26,14 +31,26 @@ const getStraight = (firstCard, secondCard) => {
 }
 
 const getFlush = (firstCard, secondCard) => {
-    if(firstCard.suit === secondCard.suit) {
-        let rank = firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
-        return {rank, title: FLUSH}
-    } else {
-        return false
-    }
+    let rank = checkValueRank(firstCard, secondCard)
+    return {rank, title: FLUSH}
+}
+
+const getStraightFlushDraw = (firstCard, secondCard) => {
+    let straightRank = getStraight(firstCard, secondCard)
+    straightRank.rank === 1 ? straightRank.title = ROYALFLUSH : straightRank.title = STRAIGHTFLUSH
+    return straightRank
 }
 
 export default function getHandEval(firstCard, secondCard) {
-
+    if(firstCard.suit === secondCard.suit && getStraight(firstCard, secondCard) !== false) {
+        return getStraightFlushDraw(firstCard, secondCard)
+    } else if(firstCard.suit === secondCard.suit === true && getStraight(firstCard, secondCard) === false) {
+        return getFlush(firstCard, secondCard)
+    } else if(firstCard.value !== secondCard.value && firstCard.suit !== secondCard.suit && getStraight(firstCard, secondCard) !== false) {
+        return getStraight(firstCard, secondCard)
+    } else if(firstCard.value === secondCard.value) {
+        return getPair(firstCard)
+    } else {
+        return getHigh(firstCard, secondCard)
+    }
 }
