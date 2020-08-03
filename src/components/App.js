@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import getHandEval from "../functions/getHandEval"
 
 import Cards from "./Cards";
 import CardSelect from "./CardSelect";
@@ -16,10 +17,11 @@ const App = () => {
   useEffect(() => {
     if(firstCard !== undefined && secondCard !== undefined) {
       setBothSelected(true)
+      const handEval = getHandEval(firstCard, secondCard)
+      console.log(handEval)
     }
   }, [firstCard, secondCard])
   
-  console.log(bothSelected)
 
   return (
     <StyledBody>

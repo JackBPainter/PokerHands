@@ -22,11 +22,11 @@ const getStraight = (firstCard, secondCard) => {
             result.push(newArr[i].join(""))
         }
     }
-    let rank = newArr.indexOf(result[0]) + 1
-    if(rank <= 0) {
-        return false
+    let rank = STRAIGHTS.indexOf(result[0]) + 1
+    if(rank > 0) {
+        return {rank, title: "Straight Draw"}
     } else {
-        return {rank, title: STRAIGHT}
+        return false
     }
 }
 
