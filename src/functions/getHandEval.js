@@ -1,5 +1,14 @@
 import { VALUES, STRAIGHTS, HIGH, PAIR, STRAIGHT, FLUSH, STRAIGHTFLUSH, ROYALFLUSH } from "../utils"
 
+const checkValueRank = (firstCard, secondCard) => {
+    return firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+}
+
+const getHigh = (firstCard, secondCard) => {
+    let rank = checkValueRank(firstCard, secondCard)
+    return {rank, title: HIGH}
+}
+
 const getPair = (firstCard) => {
     let rank = STRAIGHTS.indexOf(firstCard.value) + 1
     return {rank, title: PAIR}
@@ -22,7 +31,7 @@ const getStraight = (firstCard, secondCard) => {
 }
 
 const getFlush = (firstCard, secondCard) => {
-    let rank = firstCard.value > secondCard.value ? VALUES.indexOf(firstCard) + 1 : VALUES.indexOf(secondCard) + 1
+    let rank = checkValueRank(firstCard, secondCard)
     return {rank, title: FLUSH}
 }
 
@@ -41,5 +50,7 @@ export default function getHandEval(firstCard, secondCard) {
         return getStraight(firstCard, secondCard)
     } else if(firstCard.value === secondCard.value) {
         return getPair(firstCard)
-    } 
+    } else {
+        return getHigh(firstCard, secondCard)
+    }
 }
