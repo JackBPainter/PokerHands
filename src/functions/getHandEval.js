@@ -4,6 +4,18 @@ const checkValueRank = (firstCard, secondCard) => {
     return firstCard.value > secondCard.value ? VALUES.indexOf(firstCard.value) + 1 : VALUES.indexOf(secondCard.value) + 1
 }
 
+const completeRank = (rank) => {
+    if(rank === 1) {
+        return `${rank}st`
+    } else if(rank === 2) {
+        return `${rank}nd`
+    } else if(rank === 3) {
+        return `${rank}rd`
+    } else {
+        return `${rank}th`
+    }
+}
+
 const getHigh = (firstCard, secondCard) => {
     let rank = checkValueRank(firstCard, secondCard)
     console.log(rank)
