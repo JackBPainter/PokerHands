@@ -1,4 +1,6 @@
 import React from "react"
+import completeRank from "../functions/completeRank"
+
 import { StyledCardEvalContainer, StyledCardEvalTitle, StyledCardEvalTextContainer, StyledCardEvalText, StyledCardEvalTextTitle, StyledCardEvalTextContent } from "./styled/Lib"
  
 const CardEval = ({ handEval }) => {
@@ -12,7 +14,7 @@ const CardEval = ({ handEval }) => {
                 </StyledCardEvalText>
                 <StyledCardEvalText>
                     <StyledCardEvalTextTitle>Hand Rank:</StyledCardEvalTextTitle>
-                    <StyledCardEvalTextContent>{handEval.rank}</StyledCardEvalTextContent>
+                    <StyledCardEvalTextContent>{completeRank(handEval.rank)}</StyledCardEvalTextContent>
                 </StyledCardEvalText>
             </StyledCardEvalTextContainer>
         </StyledCardEvalContainer>
