@@ -4,10 +4,10 @@ import completeRank from "../functions/completeRank";
 import {
   StyledCardEvalContainer,
   StyledCardEvalTitle,
-  StyledCardEvalTextContainer,
-  StyledCardEvalText,
   StyledCardEvalTextTitle,
+  StyledCardEvalContentContainer,
   StyledCardEvalTextContent,
+  StyledCardEvalCircle,
 } from "./styled/Lib";
 
 const CardEval = ({ handEval }) => {
@@ -15,9 +15,13 @@ const CardEval = ({ handEval }) => {
     <StyledCardEvalContainer>
       <StyledCardEvalTitle>Pre Flop Evaluation</StyledCardEvalTitle>
       <StyledCardEvalTextTitle>{handEval.title} Rank</StyledCardEvalTextTitle>
-      <StyledCardEvalTextContent>
-        {completeRank(handEval.rank)}
-      </StyledCardEvalTextContent>
+      <StyledCardEvalContentContainer>
+        <StyledCardEvalCircle>
+          <StyledCardEvalTextContent>
+            {completeRank(handEval.rank)}
+          </StyledCardEvalTextContent>
+        </StyledCardEvalCircle>
+      </StyledCardEvalContentContainer>
     </StyledCardEvalContainer>
   );
 };

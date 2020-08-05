@@ -110,13 +110,29 @@ export const StyledCardEvalTextTitle = styled.div`
   font-weight: bold;
 `
 
+export const StyledCardEvalContentContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+  `
+
 export const StyledCardEvalTextContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 53.25px; /* StyledCardEvalText height / 2 */
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bold;
+`
+
+export const StyledCardEvalCircle = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  border: 5px solid black;
 `
 
 
