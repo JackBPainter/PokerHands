@@ -83,12 +83,12 @@ export const StyledCardSelectContainer = styled.main`
 // CardsEval.js
 
 export const StyledCardEvalContainer = styled.main`
-  height: 250px;
-  width: 180px;
+  height: 160px;
+  width: 190px;
   background: white;
   border-radius: 10% 10% 4% 4%;
   border: solid black 3px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `
 
 export const StyledCardEvalTitle = styled.span`
@@ -102,27 +102,19 @@ export const StyledCardEvalTitle = styled.span`
   font-size: 20px;
 `
 
-export const StyledCardEvalTextContainer = styled.main`
-  height: 215px; /* StyledCardEvalContainer height - StyledCardEvalTitle height */
-`
-
-export const StyledCardEvalText = styled.div`
-  height: 107.5px; /* StyledCardEvalTextContainer height / 2 */
-
-  :first-child {
-    border-bottom: solid black 2px;
-  }
-`
-
 export const StyledCardEvalTextTitle = styled.div`
-    height: 20px;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  margin-top: 5px;
+  font-weight: bold;
 `
 
 export const StyledCardEvalTextContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   height: 53.25px; /* StyledCardEvalText height / 2 */
   font-size: 18px;
 `
